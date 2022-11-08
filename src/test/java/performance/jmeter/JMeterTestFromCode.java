@@ -27,6 +27,7 @@ public class JMeterTestFromCode {
         httpSampler.setDomain("www.google.com");
         httpSampler.setPort(80);
         httpSampler.setPath("/");
+
         httpSampler.setMethod("GET");
 
         // Loop Controller
