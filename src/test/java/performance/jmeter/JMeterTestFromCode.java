@@ -22,6 +22,7 @@ public class JMeterTestFromCode {
         HashTree hashTree = new HashTree();
 
         // HTTP Sampler
+
         HTTPSampler httpSampler = new HTTPSampler();
         httpSampler.setDomain("www.google.com");
         httpSampler.setPort(80);
