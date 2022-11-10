@@ -7,7 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.Assert.assertEquals;
 
 
 //Element helpers for whole project
@@ -53,7 +53,7 @@ public class Helper {
     }
 
     public WebElement presenceElement(By key) {
-        return wait.until(ExpectedConditions.presenceOfElementLocated(key));
+        return wait.until(ExpectedConditions.visibilityOf(driver.findElement(key)));
     }
 
     public void isAssertTrue(By actualValue, String exceptedValue)
@@ -64,13 +64,11 @@ public class Helper {
     }
 
     public void typeForInput(String kw, WebElement element){
-        wait.until(ExpectedConditions.visibilityOf(element));
         assertEquals(element.getTagName(),"input");
         element.sendKeys(kw);
     }
 
     public void clickForWebElement(WebElement element){
-        wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();
     }
 
